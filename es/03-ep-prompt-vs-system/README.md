@@ -1,16 +1,21 @@
-# Prompt vs sistema: por qué solo promptar no escala
+# Ep. 03 — Memoria de conversación, ventana de contexto y ventana deslizante
 
-**Linear:** [CM-43](https://linear.app/caiomedeiros/issue/CM-43)  
 **Language:** es
 
 ## Tema
 
-Material del episodio del Curso 1 — Fundamentos de AI Engineering.
+Por qué el modelo olvida entre calls, cómo armar historial, qué es context length exceeded y la mitigación mínima: **ventana deslizante**.
 
-## Notebooks
+**Linear:** [CM-43](https://linear.app/caiomedeiros/issue/CM-43)
 
-Notebook de ejemplo en español en `notebooks/`.
+## Progresiones del notebook
 
-## Folder layout
+1. Calls aisladas → olvida
+2. Lista de historial → recuerda
+3. Crecer hasta context length exceeded
+4. Ventana deslizante → descarta lo antiguo, mantiene lo reciente
 
-- `notebooks/` — episode notebooks in this language
+## Layout
+
+- `notebooks/03-conversation-memory-sliding-window.ipynb`
+

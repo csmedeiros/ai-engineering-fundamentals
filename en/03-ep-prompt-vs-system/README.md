@@ -1,16 +1,21 @@
-# Prompt vs system: why prompting alone does not scale
+# Ep. 03 — Conversation memory, context window, and sliding window
 
-**Linear:** [CM-43](https://linear.app/caiomedeiros/issue/CM-43)  
 **Language:** en
 
 ## Topic
 
-Episode materials for Course 1 — AI Engineering Fundamentals.
+Why the model forgets between calls, how to build a message history, what happens when context length is exceeded, and the minimum fix: a **sliding window**.
 
-## Notebooks
+**Linear:** [CM-43](https://linear.app/caiomedeiros/issue/CM-43)
 
-Sample notebook in English under `notebooks/`.
+## Notebook progressions
+
+1. Stateless calls → forgets
+2. History list → remembers
+3. Grow until context length exceeded
+4. Sliding window → drop oldest, keep recent
 
 ## Folder layout
 
-- `notebooks/` — episode notebooks in this language
+- `notebooks/03-conversation-memory-sliding-window.ipynb`
+
