@@ -2,7 +2,7 @@
 
 Materials and demos for the **AI Engineering Fundamentals** course (YouTube / educational program).
 
-**Repo:** https://github.com/csmedeiros/curso-1-fundamentos-ai-engineering  
+**Repo:** https://github.com/csmedeiros/ai-engineering-fundamentals  
 **Linear project:** [YT · Fundamentos de AI Engineering](https://linear.app/caiomedeiros/project/yt-fundamentos-de-ai-engineering-f7123c46f03d)
 
 ## Guidelines
