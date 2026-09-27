@@ -11,6 +11,16 @@ Materials and demos for the **AI Engineering Fundamentals** course (YouTube / ed
 - Frameworks and deeper evals belong in advanced courses
 - Each episode shows the limitation before the technique
 
+## Local setup
+
+```bash
+uv venv
+source .venv/bin/activate   # Windows: .venv\Scripts\Activate.ps1
+uv pip install -r requirements.txt
+```
+
+NVIDIA API setup (key + OpenAI-compatible base URL) is documented in the Ep. 01 notebooks under **Setup**.
+
 ## Repository layout
 
 Content is split by **language** at the root, then by **episode**. Each episode has a `notebooks/` folder with notebooks in that language.
