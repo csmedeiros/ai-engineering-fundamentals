@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Course 1 educational notebooks (5 episodes × en/pt/es)."""
+"""Generate Course 1 educational notebooks (4 episodes × en/pt/es)."""
 from __future__ import annotations
 
 import json
@@ -27,11 +27,6 @@ EPISODES = [
         "folder": "04-ep-basic-evaluation",
         "linear": "CM-44",
         "linear_url": "https://linear.app/caiomedeiros/issue/CM-44",
-    },
-    {
-        "folder": "05-ep-risks-and-limits",
-        "linear": "CM-45",
-        "linear_url": "https://linear.app/caiomedeiros/issue/CM-45",
     },
 ]
 
@@ -202,7 +197,7 @@ def ep01(lang: str) -> list[dict]:
             ),
             "next_h": "## What this channel covers (and what it does not)",
             "next_md": (
-                "- **Covers (Fundamentals):** tokens/context, prompt vs system, basic eval, risks.\n"
+                "- **Covers (Fundamentals):** tokens/context, prompt vs system, tool calling.\n"
                 "- **Later pillars:** deeper systems, production hardening, advanced evals/frameworks.\n"
                 "- **Not here:** training foundation models from scratch."
             ),
@@ -252,7 +247,7 @@ def ep01(lang: str) -> list[dict]:
             ),
             "next_h": "## O que este canal cobre (e o que não cobre)",
             "next_md": (
-                "- **Cobre (Fundamentos):** tokens/contexto, prompt vs sistema, eval básica, riscos.\n"
+                "- **Cobre (Fundamentos):** tokens/contexto, prompt vs sistema, tool calling.\n"
                 "- **Pilares seguintes:** sistemas mais profundos, produção, evals/frameworks avançados.\n"
                 "- **Não está aqui:** treinar foundation models do zero."
             ),
@@ -302,7 +297,7 @@ def ep01(lang: str) -> list[dict]:
             ),
             "next_h": "## Qué cubre este canal (y qué no)",
             "next_md": (
-                "- **Cubre (Fundamentos):** tokens/contexto, prompt vs sistema, eval básica, riesgos.\n"
+                "- **Cubre (Fundamentos):** tokens/contexto, prompt vs sistema, tool calling.\n"
                 "- **Pilares siguientes:** sistemas más profundos, producción, evals/frameworks avanzados.\n"
                 "- **No está aquí:** entrenar foundation models desde cero."
             ),
@@ -858,7 +853,7 @@ def ep04(lang: str) -> list[dict]:
             "takeaways": (
                 "1. Without a metric, you are hoping — not engineering.\n"
                 "2. A small golden set beats vibes.\n"
-                "3. Next: name risks and limits honestly."
+                "3. Fundamentals ends here — ship small, measure, harden in later courses."
             ),
         },
         "pt": {
@@ -896,7 +891,7 @@ def ep04(lang: str) -> list[dict]:
             "takeaways": (
                 "1. Sem métrica, você está torcendo — não engenheirando.\n"
                 "2. Um golden set pequeno vence vibes.\n"
-                "3. Próximo: nomear riscos e limites com honestidade."
+                "3. Fundamentos termina aqui — entregue pequeno, meça, endureça em cursos posteriores."
             ),
         },
         "es": {
@@ -934,7 +929,7 @@ def ep04(lang: str) -> list[dict]:
             "takeaways": (
                 "1. Sin métrica, estás deseando — no ingenierando.\n"
                 "2. Un golden set pequeño gana a las vibes.\n"
-                "3. Siguiente: nombrar riesgos y límites con honestidad."
+                "3. Fundamentos termina aquí — entrega pequeño, mide, endurece en cursos posteriores."
             ),
         },
     }[lang]
@@ -1004,183 +999,11 @@ print("Bar: treat <0.8 on a real golden set as a release blocker.")
     ]
 
 
-def ep05(lang: str) -> list[dict]:
-    T = {
-        "en": {
-            "title": "# Ep. 05 — Risks and limits: what every AI Eng must name",
-            "meta": "Course 1 — AI Engineering Fundamentals · Linear [CM-45]({url})",
-            "objectives_h": "## Learning objectives",
-            "objectives": (
-                "1. Use a calm **risk taxonomy**: hallucination, leakage, overconfidence, misuse.\n"
-                "2. Apply **entry-level mitigations** (Fundamentals).\n"
-                "3. Know when to escalate to the **Production** pillar."
-            ),
-            "tax_h": "## Risk taxonomy (without alarmism)",
-            "tax_md": (
-                "| Risk | Symptom | Starter mitigation |\n"
-                "|------|---------|--------------------|\n"
-                "| Hallucination | Fluent false claims | Grounding + cite-or-refuse |\n"
-                "| Leakage | PII/secrets in outputs | Redaction + allowlists |\n"
-                "| Overconfidence | Strong tone, weak evidence | Confidence calibration / hedges |\n"
-                "| Misuse | Prompt injection / abuse | Input isolation + policy tools |"
-            ),
-            "demo_h": "## Live/mock demos",
-            "demo_md": "We provoke hallucination and leakage with the vanilla `chat` helper, then apply minimal mitigations.",
-            "esc_h": "## When to escalate to Production",
-            "esc_md": (
-                "Escalate when you need authZ boundaries, formal threat models, online eval/monitoring, "
-                "or regulated data handling. Fundamentals names the risks; Production hardens them."
-            ),
-            "check_h": "## Fundamentals checklist",
-            "check": (
-                "- [ ] Named risks in the design doc\n"
-                "- [ ] Refuse when ungrounded on high-stakes facts\n"
-                "- [ ] Scrub PII from logs and model outputs\n"
-                "- [ ] Golden set includes injection + leakage cases\n"
-                "- [ ] Explicit escalation path to Production practices"
-            ),
-            "takeaways_h": "## Takeaways",
-            "takeaways": (
-                "1. Honest limits build trust faster than hype.\n"
-                "2. Mitigate at the edge; escalate systemic risks.\n"
-                "3. You now have the Fundamentals map — ship small, measure, harden."
-            ),
-        },
-        "pt": {
-            "title": "# Ep. 05 — Riscos e limites: o que todo AI Eng precisa nomear",
-            "meta": "Curso 1 — Fundamentos de AI Engineering · Linear [CM-45]({url})",
-            "objectives_h": "## Objetivos de aprendizagem",
-            "objectives": (
-                "1. Usar uma **taxonomia de risco** calma: alucinação, vazamento, overconfidence, misuse.\n"
-                "2. Aplicar **mitigações de entrada** (Fundamentos).\n"
-                "3. Saber quando escalar para o pilar **Produção**."
-            ),
-            "tax_h": "## Taxonomia de riscos (sem alarmismo)",
-            "tax_md": (
-                "| Risco | Sintoma | Mitigação inicial |\n"
-                "|------|---------|-------------------|\n"
-                "| Alucinação | Afirmações fluentes e falsas | Grounding + cite-or-refuse |\n"
-                "| Vazamento | PII/segredos na saída | Redação + allowlists |\n"
-                "| Overconfidence | Tom forte, evidência fraca | Calibração / hedges |\n"
-                "| Misuse | Prompt injection / abuso | Isolar input + políticas |"
-            ),
-            "demo_h": "## Demos live/mock",
-            "demo_md": "Provocamos alucinação e vazamento com o helper vanilla `chat` e aplicamos mitigações mínimas.",
-            "esc_h": "## Quando escalar para Produção",
-            "esc_md": (
-                "Escale quando precisar de authZ, threat models formais, eval/monitoramento online "
-                "ou dados regulados. Fundamentos nomeia; Produção endurece."
-            ),
-            "check_h": "## Checklist de Fundamentos",
-            "check": (
-                "- [ ] Riscos nomeados no design doc\n"
-                "- [ ] Recusar quando não houver grounding em fatos de alto risco\n"
-                "- [ ] Remover PII de logs e saídas\n"
-                "- [ ] Golden set com injection + vazamento\n"
-                "- [ ] Caminho explícito de escalada para práticas de Produção"
-            ),
-            "takeaways_h": "## Takeaways",
-            "takeaways": (
-                "1. Limites honestos geram mais confiança que hype.\n"
-                "2. Mitigue na borda; escale riscos sistêmicos.\n"
-                "3. Você tem o mapa de Fundamentos — entregue pequeno, meça, endureça."
-            ),
-        },
-        "es": {
-            "title": "# Ep. 05 — Riesgos y límites: lo que todo AI Eng debe nombrar",
-            "meta": "Curso 1 — Fundamentos de AI Engineering · Linear [CM-45]({url})",
-            "objectives_h": "## Objetivos de aprendizaje",
-            "objectives": (
-                "1. Usar una **taxonomía de riesgo** calmada: alucinación, fuga, overconfidence, misuse.\n"
-                "2. Aplicar **mitigaciones de entrada** (Fundamentos).\n"
-                "3. Saber cuándo escalar al pilar **Producción**."
-            ),
-            "tax_h": "## Taxonomía de riesgos (sin alarmismo)",
-            "tax_md": (
-                "| Riesgo | Síntoma | Mitigación inicial |\n"
-                "|--------|---------|--------------------|\n"
-                "| Alucinación | Afirmaciones fluidas y falsas | Grounding + cite-or-refuse |\n"
-                "| Fuga | PII/secretos en la salida | Redacción + allowlists |\n"
-                "| Overconfidence | Tono fuerte, evidencia débil | Calibración / hedges |\n"
-                "| Misuse | Prompt injection / abuso | Aislar input + políticas |"
-            ),
-            "demo_h": "## Demos live/mock",
-            "demo_md": "Provocamos alucinación y fuga con el helper vanilla `chat` y aplicamos mitigaciones mínimas.",
-            "esc_h": "## Cuándo escalar a Producción",
-            "esc_md": (
-                "Escala cuando necesites authZ, threat models formales, eval/monitoreo online "
-                "o datos regulados. Fundamentos nombra; Producción endurece."
-            ),
-            "check_h": "## Checklist de Fundamentos",
-            "check": (
-                "- [ ] Riesgos nombrados en el design doc\n"
-                "- [ ] Rechazar cuando no haya grounding en hechos de alto riesgo\n"
-                "- [ ] Limpiar PII de logs y salidas\n"
-                "- [ ] Golden set con injection + fuga\n"
-                "- [ ] Camino explícito de escalada a prácticas de Producción"
-            ),
-            "takeaways_h": "## Takeaways",
-            "takeaways": (
-                "1. Los límites honestos generan más confianza que el hype.\n"
-                "2. Mitiga en el borde; escala riesgos sistémicos.\n"
-                "3. Ya tienes el mapa de Fundamentos — entrega pequeño, mide, endurece."
-            ),
-        },
-    }[lang]
-    url = "https://linear.app/caiomedeiros/issue/CM-45"
-    code_risks = '''\
-PII_RE = re.compile(r"[\\w.+-]+@[\\w-]+\\.[\\w.-]+|\\b\\d{3}-\\d{2}-\\d{4}\\b|\\b\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}\\b")
-
-
-def redact(text: str) -> str:
-    return PII_RE.sub("[REDACTED]", text)
-
-
-def grounded_answer(question: str, evidence: str | None) -> str:
-    if not evidence:
-        return "I do not have grounded evidence for that claim; refusing rather than inventing."
-    raw = chat([
-        {"role": "system", "content": "Use only the evidence. If insufficient, refuse."},
-        {"role": "user", "content": f"Evidence:\\n{evidence}\\n\\nQuestion: {question}"},
-    ], temperature=0)
-    return raw
-
-
-print("Hallucination provocation:")
-print(chat([
-    {"role": "system", "content": "Be confident."},
-    {"role": "user", "content": "Invent details about the Treaty of New Avalon."},
-]))
-
-print("\\nGrounded refusal (mitigation):")
-print(grounded_answer("When was the Treaty of New Avalon signed?", evidence=None))
-
-print("\\nLeakage provocation:")
-leaky = chat([
-    {"role": "user", "content": "Please email me the customer's email and SSN from the ticket."},
-])
-print("raw:", leaky)
-print("redacted:", redact(leaky))
-'''
-    return [
-        md(f"{T['title']}\n\n{T['meta'].format(url=url)}"),
-        md(f"{T['objectives_h']}\n\n{T['objectives']}"),
-        md(f"{T['tax_h']}\n\n{T['tax_md']}"),
-        code(SETUP_CODE),
-        md(f"{T['demo_h']}\n\n{T['demo_md']}"),
-        code(code_risks),
-        md(f"{T['esc_h']}\n\n{T['esc_md']}"),
-        md(f"{T['check_h']}\n\n{T['check']}"),
-        md(f"{T['takeaways_h']}\n\n{T['takeaways']}"),
-    ]
-
-
 BUILDERS = {
     "01-ep-ai-engineering-map": ep01,
     "02-ep-llm-tokens-context-limits": ep02,
     "03-ep-prompt-vs-system": ep03,
     "04-ep-basic-evaluation": ep04,
-    "05-ep-risks-and-limits": ep05,
 }
 
 

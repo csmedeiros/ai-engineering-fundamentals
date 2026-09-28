@@ -43,7 +43,6 @@ es/   # Spanish
 | 02 | `02-ep-llm-tokens-context-limits` | [CM-42](https://linear.app/caiomedeiros/issue/CM-42) | LLMs are not magic: tokens, context, and limits |
 | 03 | `03-ep-prompt-vs-system` | [CM-43](https://linear.app/caiomedeiros/issue/CM-43) | Conversation memory & sliding window |
 | 04 | `04-ep-tool-calling` | [CM-44](https://linear.app/caiomedeiros/issue/CM-44) | Tool calling |
-| 05 | `05-ep-risks-and-limits` | [CM-45](https://linear.app/caiomedeiros/issue/CM-45) | Risks and limits |
 
 Examples:
 
