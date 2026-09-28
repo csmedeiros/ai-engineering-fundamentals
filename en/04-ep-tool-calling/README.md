@@ -1,11 +1,11 @@
-# Basic evaluation: how to know it works
+# Tool calling
 
 **Linear:** [CM-44](https://linear.app/caiomedeiros/issue/CM-44)  
 **Language:** en
 
 ## Topic
 
-Episode materials for Course 1 — AI Engineering Fundamentals.
+Alone, the model only generates text. With tools, the assistant can ask your code to run a function and use the result in the answer.
 
 ## Notebooks
 

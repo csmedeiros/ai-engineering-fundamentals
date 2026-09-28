@@ -1,11 +1,11 @@
-# Avaliação básica: como saber se funciona
+# Chamada de ferramentas (tool calling)
 
 **Linear:** [CM-44](https://linear.app/caiomedeiros/issue/CM-44)  
 **Language:** pt
 
 ## Tema
 
-Material do episódio do Curso 1 — Fundamentos de AI Engineering.
+O modelo sozinho só gera texto. Com tools, o assistente pode pedir que o seu código execute uma função e use o resultado na resposta.
 
 ## Notebooks
 
