@@ -19,7 +19,7 @@ source .venv/bin/activate   # Windows: .venv\Scripts\Activate.ps1
 uv pip install -r requirements.txt
 ```
 
-NVIDIA API setup (key + OpenAI-compatible base URL) is documented in the Ep. 01 notebooks under **Setup**.
+NVIDIA NIM setup (`NVIDIA_API_KEY`, base URL `https://integrate.api.nvidia.com/v1`, OpenAI-compatible format) is documented in the Ep. 01 notebooks under **Setup**. Free Endpoint models: [build.nvidia.com/models](https://build.nvidia.com/models?filters=nimType%3Anim_type_preview).
 
 ## Repository layout
 

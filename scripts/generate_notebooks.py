@@ -95,15 +95,15 @@ import time
 from dataclasses import dataclass, field
 from typing import Any, Callable
 
-# Optional: set OPENAI_API_KEY to call a real OpenAI-compatible API.
+# Optional: set NVIDIA_API_KEY to call the NVIDIA NIM API (OpenAI-compatible format).
 # Without a key, every demo below still runs offline with a tiny mock LLM.
-API_KEY = os.environ.get("OPENAI_API_KEY", "").strip()
-API_BASE = os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1").rstrip("/")
-MODEL = os.environ.get("OPENAI_MODEL", "gpt-4o-mini")
+API_KEY = os.environ.get("NVIDIA_API_KEY", "").strip()
+API_BASE = os.environ.get("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1").rstrip("/")
+MODEL = os.environ.get("NVIDIA_MODEL", "meta/llama-3.1-8b-instruct")
 
 
 def chat(messages: list[dict[str, str]], *, temperature: float = 0.2, max_tokens: int = 300) -> str:
-    """Vanilla chat completion: direct HTTP to an OpenAI-compatible API, or offline mock."""
+    """Vanilla chat completion: direct HTTP to NVIDIA NIM (OpenAI-compatible format), or offline mock."""
     if not API_KEY:
         return _mock_chat(messages)
     try:
@@ -152,7 +152,7 @@ def _mock_chat(messages: list[dict[str, str]]) -> str:
     return f"Based on my training, the answer is clearly related to: {snippet}…"
 
 
-print("Mode:", "LIVE API" if API_KEY else "OFFLINE MOCK (set OPENAI_API_KEY for live calls)")
+print("Mode:", "LIVE API" if API_KEY else "OFFLINE MOCK (set NVIDIA_API_KEY for live calls)")
 print("Model:", MODEL if API_KEY else "mock-llm")
 '''
 
